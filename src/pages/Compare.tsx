@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
 import FloatingCart from "@/components/FloatingCart";
 
@@ -122,6 +123,7 @@ const Compare = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <TopBar />
       <Navigation />
       <FloatingCart />
       

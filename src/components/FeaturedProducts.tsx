@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Heart, ShoppingCart, Eye, Star, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -107,9 +108,11 @@ const FeaturedProducts = () => {
                     <ShoppingCart className="h-4 w-4 mr-2" />
                     Add to Cart
                   </Button>
-                  <Button variant="outline" size="sm" className="glass border-border/40">
-                    <Eye className="h-4 w-4" />
-                  </Button>
+                  <Link to={`/product/cameras/${product.id}`}>
+                    <Button variant="outline" size="sm" className="glass border-border/40">
+                      <Eye className="h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
 

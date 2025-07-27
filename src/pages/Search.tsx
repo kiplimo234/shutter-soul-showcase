@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
+import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
 import FloatingCart from "@/components/FloatingCart";
 
@@ -112,6 +113,7 @@ const Search = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <TopBar />
       <Navigation />
       <FloatingCart />
       

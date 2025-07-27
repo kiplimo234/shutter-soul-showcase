@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
 import FloatingCart from "@/components/FloatingCart";
 
@@ -112,6 +113,7 @@ const TestShots = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <TopBar />
       <Navigation />
       <FloatingCart />
       

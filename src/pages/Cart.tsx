@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
 
 const Cart = () => {
@@ -78,6 +79,7 @@ const Cart = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <TopBar />
       <Navigation />
       
       <div className="pt-20 px-4 sm:px-6 lg:px-8">

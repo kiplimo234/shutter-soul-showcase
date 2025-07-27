@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
 import FloatingCart from "@/components/FloatingCart";
 
@@ -90,6 +91,7 @@ const Account = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <TopBar />
       <Navigation />
       <FloatingCart />
       

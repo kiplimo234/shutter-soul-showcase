@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Search, Filter, Grid, Star, Heart, ShoppingCart, Zap, Shield, Headphones } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Search, Filter, Grid, Star, Heart, ShoppingCart, Zap, Shield, Headphones, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
 import FloatingCart from "@/components/FloatingCart";
 
@@ -110,6 +112,7 @@ const Accessories = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <TopBar />
       <Navigation />
       <FloatingCart />
       
@@ -241,10 +244,17 @@ const Accessories = () => {
                         <span className="font-bold text-xl text-primary">${accessory.price}</span>
                         <span className="text-sm text-foreground/50 line-through">${accessory.originalPrice}</span>
                       </div>
-                      <Button className="btn-premium">
-                        <ShoppingCart className="h-4 w-4 mr-2" />
-                        Add to Cart
-                      </Button>
+                      <div className="flex gap-2">
+                        <Link to={`/product/accessories/${accessory.id}`}>
+                          <Button variant="outline" size="sm" className="glass border-border/40">
+                            <Eye className="h-4 w-4" />
+                          </Button>
+                        </Link>
+                        <Button className="btn-premium">
+                          <ShoppingCart className="h-4 w-4 mr-2" />
+                          Add to Cart
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </CardContent>

@@ -11,6 +11,7 @@ import Compare from "./pages/Compare";
 import Search from "./pages/Search";
 import Account from "./pages/Account";
 import Cart from "./pages/Cart";
+import ProductView from "./pages/ProductView";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/search" element={<Search />} />
           <Route path="/account" element={<Account />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/product/:type/:id" element={<ProductView />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
