@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { 
   Heart, 
@@ -27,6 +27,13 @@ const ProductView = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isWishlisted, setIsWishlisted] = useState(false);
+
+  // Reset state when route parameters change
+  useEffect(() => {
+    setSelectedImage(0);
+    setQuantity(1);
+    setIsWishlisted(false);
+  }, [id, type]);
 
   // Mock product data - in real app this would come from API
   const product = {
@@ -312,7 +319,8 @@ const ProductView = () => {
                 <Link 
                   key={relatedProduct.id}
                   to={`/product/${type}/${relatedProduct.id}`}
-                  className="camera-card rounded-xl p-6 group cursor-pointer"
+                  className="camera-card rounded-xl p-6 group cursor-pointer block"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   <img 
                     src={relatedProduct.image} 
