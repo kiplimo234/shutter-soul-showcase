@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Separator } from "@/components/ui/separator";
 import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import FloatingCart from "@/components/FloatingCart";
 
 const Search = () => {
@@ -335,6 +336,7 @@ const Search = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
