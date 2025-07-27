@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import FloatingCart from "@/components/FloatingCart";
 
 const TestShots = () => {
@@ -272,6 +273,7 @@ const TestShots = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

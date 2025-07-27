@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import FloatingCart from "@/components/FloatingCart";
 
 const Account = () => {
@@ -352,6 +353,7 @@ const Account = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

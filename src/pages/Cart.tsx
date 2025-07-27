@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([
@@ -316,6 +317,7 @@ const Cart = () => {
           )}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

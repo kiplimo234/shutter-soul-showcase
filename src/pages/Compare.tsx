@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import TopBar from "@/components/TopBar";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import FloatingCart from "@/components/FloatingCart";
 
 const Compare = () => {
@@ -275,6 +276,7 @@ const Compare = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
