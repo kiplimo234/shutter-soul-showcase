@@ -1,8 +1,28 @@
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-cameras.jpg";
+import { useState } from "react";
 
 const Hero = () => {
+  const [activeFeature, setActiveFeature] = useState(0);
+
+  const features = [
+    {
+      icon: "✓",
+      title: "Expert Curation",
+      description: "Hand-picked cameras tested by professionals"
+    },
+    {
+      icon: "⚡",
+      title: "Fast Delivery", 
+      description: "Free shipping on orders over $500"
+    },
+    {
+      icon: "♥",
+      title: "Lifetime Support",
+      description: "Expert advice whenever you need it"
+    }
+  ];
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -47,29 +67,44 @@ const Hero = () => {
           </div>
 
           {/* Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-            <div className="glass-card p-6 rounded-lg text-center group hover:scale-105 transition-transform duration-300">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary text-xl font-bold">✓</span>
-              </div>
-              <h3 className="font-semibold text-lg mb-2">Expert Curation</h3>
-              <p className="text-foreground/60">Hand-picked cameras tested by professionals</p>
+          <div className="mt-16">
+            {/* Desktop view - grid layout */}
+            <div className="hidden md:grid md:grid-cols-3 gap-6">
+              {features.map((feature, index) => (
+                <div key={index} className="glass-card p-6 rounded-lg text-center group hover:scale-105 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-primary text-xl font-bold">{feature.icon}</span>
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
+                  <p className="text-foreground/60">{feature.description}</p>
+                </div>
+              ))}
             </div>
-            
-            <div className="glass-card p-6 rounded-lg text-center group hover:scale-105 transition-transform duration-300">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary text-xl font-bold">⚡</span>
+
+            {/* Mobile view - carousel */}
+            <div className="md:hidden">
+              {/* Icon row */}
+              <div className="flex justify-center gap-8 mb-6">
+                {features.map((feature, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveFeature(index)}
+                    className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      activeFeature === index 
+                        ? 'bg-primary/30 scale-110' 
+                        : 'bg-primary/20 hover:bg-primary/25'
+                    }`}
+                  >
+                    <span className="text-primary text-xl font-bold">{feature.icon}</span>
+                  </button>
+                ))}
               </div>
-              <h3 className="font-semibold text-lg mb-2">Fast Delivery</h3>
-              <p className="text-foreground/60">Free shipping on orders over $500</p>
-            </div>
-            
-            <div className="glass-card p-6 rounded-lg text-center group hover:scale-105 transition-transform duration-300">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary text-xl font-bold">♥</span>
+
+              {/* Active feature content */}
+              <div className="glass-card p-6 rounded-lg text-center transition-all duration-300">
+                <h3 className="font-semibold text-lg mb-2">{features[activeFeature].title}</h3>
+                <p className="text-foreground/60">{features[activeFeature].description}</p>
               </div>
-              <h3 className="font-semibold text-lg mb-2">Lifetime Support</h3>
-              <p className="text-foreground/60">Expert advice whenever you need it</p>
             </div>
           </div>
         </div>
